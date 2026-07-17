@@ -82,13 +82,14 @@ button { font-family: var(--font-display); cursor: pointer; }
   cursor: pointer;
   transition: transform .35s cubic-bezier(.22,1,.36,1), background .35s ease, color .35s ease, border-color .35s ease;
 }
-.pill-btn:hover { transform: translateY(-2px); background: var(--action-fill-hover); }
+.pill-btn:hover { transform: translateY(-2px); background: var(--action-fill-hover); color:var(--kaiu-white); }
 .pill-btn-outline {
   background: transparent;
   color: var(--text-primary);
   border: 1px solid var(--kaiu-brown-mid);
 }
-.pill-btn-outline:hover { background: transparent; border-color: var(--kaiu-ink); color: var(--text-primary); }
+.pill-btn-outline:hover { background: var(--kaiu-ink); border-color: var(--kaiu-ink); color: var(--kaiu-white); }
+
 
 .app-shell {
   font-family: var(--font-display);
