@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx';
 import WoodgrainFilter from './components/Shared.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
@@ -17,6 +18,7 @@ export default function App() {
     <div className="app-shell">
       <WoodgrainFilter />
       <Header />
+      <ScrollToTop />
       <main className="app-main">
         <Routes>
           <Route path="/" element={<Home />} />
