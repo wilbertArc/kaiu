@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 export default function WhatsAppButton() {
-  const phone = '6281312345678';
+  const phone = '628131205377';
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
@@ -38,9 +38,9 @@ export default function WhatsAppButton() {
       }}
     >
       <img
-        src="/assets/icons/whatsapp.png"
+        src="/assets/icons/whatsapp.jpg"
         alt=""
-        style={{ width: '135%', height: '135%', display: 'block', objectFit: 'cover', marginLeft: '-17.5%', marginTop: '-17.5%' }}
+        style={{ width: '150%', height: '152%', display: 'block', objectFit: 'cover', marginLeft: '-24.2%', marginTop: '-26%' }}
       />
     </a>
   );
