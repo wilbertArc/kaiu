@@ -19,7 +19,7 @@ export default function Contact() {
     const payload = {
       name: form.name.value,
       email: form.email.value,
-      enquiryType: form.enquiryType.value,
+      phone: form.enquiryType.value,
       message: form.message.value,
     };
     try {
@@ -75,7 +75,7 @@ export default function Contact() {
             </div>
             <div className="contact-form-field">
               <label>{t.contact.enquiryType}</label>
-              <input type="text" name="enquiryType" placeholder={t.contact.enquiryPh} />
+              <input type="tel" name="enquiryType" placeholder={t.contact.enquiryPh} />
             </div>
             <div className="contact-form-field">
               <label>{t.contact.message}</label>
