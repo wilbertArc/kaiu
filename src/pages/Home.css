@@ -6,7 +6,7 @@
   max-width: 620px;
   margin: 0 auto;
 }
-.hero-swatch { aspect-ratio: 1/1.1; border-radius: 3px; box-shadow: 0 24px 48px -30px rgba(51,40,36,.45); }
+.hero-swatch { width: 100%; aspect-ratio: 1/1.1; object-fit: cover; border-radius: 3px; box-shadow: 0 24px 48px -30px rgba(51,40,36,.45); display: block; }
 .hero-copy { max-width: 720px; margin: 64px auto 0; text-align: center; }
 .hero-copy h1 { margin: 18px 0 0; font-weight: var(--weight-hero); font-size: clamp(30px,4.4vw,50px); line-height: 1.2; color: var(--text-primary); }
 .hero-cta {

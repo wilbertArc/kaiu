@@ -2,16 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { pillClass, ProjectCard } from '../components/Shared.jsx';
 import { PROJECTS } from '../data.js';
+import { useLanguage } from '../LanguageContext.jsx';
 import useReveal from '../useReveal.js';
 import './Projects.css';
 
 export default function Projects() {
+  const { t } = useLanguage();
   const ctaRef = useReveal();
   return (
     <div>
       <div className="projects-header">
-        <span className="eyebrow">Projects</span>
-        <h1>Selected Work</h1>
+        <span className="eyebrow">{t.projects.eyebrow}</span>
+        <h1>{t.projects.title}</h1>
       </div>
       <div className="projects-body">
         <div className="project-grid">

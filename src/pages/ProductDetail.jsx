@@ -2,39 +2,41 @@ import React from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { Swatch, pillClass } from '../components/Shared.jsx';
 import { PRODUCTS } from '../data.js';
+import { useLanguage } from '../LanguageContext.jsx';
 import './ProductDetail.css';
 
 export default function ProductDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { t, lang } = useLanguage();
   const product = PRODUCTS.find((p) => p.id === id);
 
   if (!product) {
     return (
       <div className="product-detail" style={{ textAlign: 'center' }}>
-        <p style={{ fontSize: 18, color: 'var(--kaiu-brown-deep)' }}>Product not found.</p>
-        <Link to="/products" className={pillClass('outline')} style={{ marginTop: 20 }}>Back to Collections</Link>
+        <p style={{ fontSize: 18, color: 'var(--kaiu-brown-deep)' }}>{t.productDetail.notFound}</p>
+        <Link to="/products" className={pillClass('outline')} style={{ marginTop: 20 }}>{t.productDetail.back}</Link>
       </div>
     );
   }
 
   const rows = [
-    ['Species', product.species],
-    ['Cut Method', product.cutMethod],
-    ['Best For', product.bestFor],
-    ['Finish', product.finish],
+    [t.productDetail.species, lang === 'id' ? product.idSpecies : product.species],
+    [t.productDetail.cutMethod, lang === 'id' ? product.idCutMethod : product.cutMethod],
+    [t.productDetail.bestFor, lang === 'id' ? product.idBestFor : product.bestFor],
+    [t.productDetail.finish, lang === 'id' ? product.idFinish : product.finish],
   ];
 
   return (
     <div className="product-detail">
-      <Link to="/products" className="back-link">← Back to Collections</Link>
+      <Link to="/products" className="back-link">{t.productDetail.back}</Link>
       <div className="product-detail-grid">
-        <Swatch color={product.color} className="product-detail-swatch" />
+        <img src={product.image} className="product-detail-swatch" loading="lazy"/>
         <div>
-          <span className="eyebrow">{product.collectionLabel} Collection</span>
+          <span className="eyebrow">{product.collectionLabel} {t.productDetail.collection}</span>
           <h1>{product.name}</h1>
-          <span className="product-detail-cut">{product.cut}</span>
-          <p className="product-detail-desc">{product.longDesc}</p>
+          <span className="product-detail-cut">{lang === 'id' ? product.idCut : product.cut}</span>
+          <p className="product-detail-desc">{lang === 'id' ? product.idLongDesc : product.longDesc}</p>
           <div className="detail-info-grid">
             {rows.map(([label, val]) => (
               <div key={label} className="detail-info-cell">
@@ -43,7 +45,7 @@ export default function ProductDetail() {
               </div>
             ))}
           </div>
-          <button className={`${pillClass()} product-detail-cta`} onClick={() => navigate('/contact')}>Request a Sample</button>
+          <button className={`${pillClass()} product-detail-cta`} onClick={() => navigate('/contact')}>{t.productDetail.requestSample}</button>
         </div>
       </div>
     </div>

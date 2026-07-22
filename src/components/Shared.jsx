@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../LanguageContext.jsx';
 
 /** Wood-grain SVG turbulence filter, shared by every page. */
-export default function WoodgrainFilter() {
+export function WoodgrainFilter() {
   return (
     <svg width="0" height="0" style={{ position: 'absolute' }}>
       <defs>
@@ -16,6 +17,7 @@ export default function WoodgrainFilter() {
     </svg>
   );
 }
+export default WoodgrainFilter;
 
 /** A wood-grain swatch block. `color` may be a solid hex or a CSS gradient. className carries layout (size/radius/shadow) from the page's own CSS. */
 export const Swatch = ({ color, className, style }) => (
@@ -28,6 +30,7 @@ export const Swatch = ({ color, className, style }) => (
 export const pillClass = (variant) => `pill-btn${variant === 'outline' ? ' pill-btn-outline' : ''}`;
 
 export function ProjectCard({ project, to }) {
+  const { lang } = useLanguage();
   return (
     <Link to={to} className="project-card">
       <div className="project-card-scene" style={{ background: project.gradient }} />
@@ -35,7 +38,7 @@ export function ProjectCard({ project, to }) {
       <div className="project-card-tag">
         <div>
           <div className="name">Mercure Hotel</div>
-          <div className="room">{project.room}</div>
+          <div className="room">{lang === 'id' ? project.idRoom : project.room}</div>
         </div>
         <div className="project-card-expand">↗</div>
       </div>
