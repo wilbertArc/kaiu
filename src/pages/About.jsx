@@ -24,15 +24,15 @@ export default function About() {
             <p>{t.about.p1}</p>
             <p>{t.about.p2}</p>
           </div>
-          <Swatch color={GRAIN} className="about-swatch-tall" />
+          <img src="/assets/stock images/about-intro.jpg" className="about-swatch-tall" style={{ objectFit: 'cover', width: '100%', display: 'block' }} alt="" />
         </div>
 
         <div className="reveal" ref={wideRef}>
-          <Swatch color={GRAIN} className="about-wide" />
+          <img src="/assets/stock images/about-wide.jpg" className="about-wide" style={{ objectFit: 'cover', width: '100%', display: 'block' }} alt="" />
         </div>
 
         <div className="about-mission reveal" ref={missionRef}>
-          <Swatch color={GRAIN} className="swatch" />
+          <img src="/assets/stock images/about-mission.jpg" className="swatch" style={{ objectFit: 'cover', width: '100%', display: 'block' }} alt="" />
           <div>
             <span className="eyebrow">{t.about.missionEyebrow}</span>
             <h3>{t.about.missionTitle}</h3>

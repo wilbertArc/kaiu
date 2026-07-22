@@ -30,7 +30,7 @@ export default function ProjectDetail() {
     <div className="project-detail">
       <Link to="/projects" className="back-link">{t.projectDetail.back}</Link>
       <div className="project-detail-banner">
-        <div className="scene" style={{ background: project.gradient }} />
+        <img src={project.image} className="scene" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} alt={lang === 'id' ? project.idRoom : project.room} />
       </div>
       <div className="project-detail-grid">
         <div>

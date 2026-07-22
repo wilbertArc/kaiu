@@ -33,7 +33,7 @@ export function ProjectCard({ project, to }) {
   const { lang } = useLanguage();
   return (
     <Link to={to} className="project-card">
-      <div className="project-card-scene" style={{ background: project.gradient }} />
+      <img src={project.image} className="project-card-scene" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} alt={project.room} />
       <div className="project-card-shade" />
       <div className="project-card-tag">
         <div>

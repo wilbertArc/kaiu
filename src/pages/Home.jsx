@@ -86,10 +86,7 @@ export default function Home() {
             {t.home.storyCta}
           </Link>
         </div>
-        <Swatch
-          color="linear-gradient(135deg, var(--kaiu-ink), var(--kaiu-brown-deep) 60%, var(--kaiu-brown-mid))"
-          className="story-swatch"
-        />
+        <img src="/assets/stock images/wood.jpg" className="story-swatch" style={{ objectFit: 'cover', width: '100%', display: 'block' }} alt="" />
       </section>
 
       <section className="home-section reveal" ref={worksRef}>
