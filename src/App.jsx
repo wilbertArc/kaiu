@@ -1,19 +1,19 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Header from './components/Header.jsx';
-import Footer from './components/Footer.jsx';
-import ScrollToTop from './components/ScrollToTop.jsx';
-import WoodgrainFilter from './components/Shared.jsx';
-import WhatsAppButton from './components/WhatsAppButton.jsx';
-import Home from './pages/Home.jsx';
-import About from './pages/About.jsx';
-import Products from './pages/Products.jsx';
-import ProductDetail from './pages/ProductDetail.jsx';
-import Projects from './pages/Projects.jsx';
-import ProjectDetail from './pages/ProjectDetail.jsx';
-import Services from './pages/Services.jsx';
-import Contact from './pages/Contact.jsx';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
+import WoodgrainFilter from "./components/Shared.jsx";
+import WhatsAppButton from "./components/WhatsAppButton.jsx";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Products from "./pages/Products.jsx";
+import ProductDetail from "./pages/ProductDetail.jsx";
+import Projects from "./pages/Projects.jsx";
+import ProjectDetail from "./pages/ProjectDetail.jsx";
+import Services from "./pages/Services.jsx";
+import Contact from "./pages/Contact.jsx";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export default function App() {
   return (
@@ -35,6 +35,7 @@ export default function App() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <SpeedInsights />
     </div>
   );
 }
