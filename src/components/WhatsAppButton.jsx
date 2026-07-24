@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 export default function WhatsAppButton() {
-  const phone = '6281312345678';
+  const phone = '628131205377';
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
