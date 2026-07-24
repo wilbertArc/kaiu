@@ -13,6 +13,7 @@ import Projects from './pages/Projects.jsx';
 import ProjectDetail from './pages/ProjectDetail.jsx';
 import Services from './pages/Services.jsx';
 import Contact from './pages/Contact.jsx';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function App() {
   return (
