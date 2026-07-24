@@ -46,7 +46,7 @@ const TRANSLATIONS = {
     },
     services: { eyebrow: 'What we offer', title: 'Services, end to end' },
     contact: {
-      eyebrow: 'Get in touch', title: "Let's talk about your next surface",
+      eyebrow: 'Get in touch', title: "Let's talk about your next project",
       studio: 'Studio', email: 'Email', phone: 'Phone / WhatsApp', hours: 'Studio Hours',
       hoursValue: 'Monday – Saturday, 09:00 – 18:00',
       fullName: 'Full Name', fullNamePh: 'Your name',
@@ -103,7 +103,7 @@ const TRANSLATIONS = {
     },
     services: { eyebrow: 'Apa yang kami tawarkan', title: 'Layanan menyeluruh' },
     contact: {
-      eyebrow: 'Hubungi kami', title: 'Mari bicarakan permukaan berikutnya',
+      eyebrow: 'Hubungi kami', title: 'Mari bicarakan proyek berikutnya',
       studio: 'Studio', email: 'Email', phone: 'Telepon / WhatsApp', hours: 'Jam Operasional',
       hoursValue: 'Senin – Sabtu, 09:00 – 18:00',
       fullName: 'Nama Lengkap', fullNamePh: 'Nama Anda',

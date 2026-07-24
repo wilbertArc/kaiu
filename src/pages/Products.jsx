@@ -1,10 +1,21 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Swatch, pillClass } from '../components/Shared.jsx';
-import { PRODUCTS, FILTER_OPTIONS, PAGE_SIZE, PAGE_SIZE_MORE } from '../data.js';
+import { PRODUCTS, FILTER_OPTIONS, COLLECTION_INFO, PAGE_SIZE, PAGE_SIZE_MORE } from '../data.js';
 import { useLanguage } from '../LanguageContext.jsx';
 import useReveal from '../useReveal.js';
 import './Products.css';
+
+function shortDesc(text) {
+  if (!text) return '';
+  const firstSentence = text.split(/(?<=[.!?])\s/)[0];
+  return firstSentence;
+}
+
+function displayName(name, collectionLabel) {
+  const prefix = collectionLabel + ' ';
+  return name.startsWith(prefix) ? name.slice(prefix.length) : name;
+}
 
 export default function Products() {
   const { t, lang } = useLanguage();
@@ -14,6 +25,7 @@ export default function Products() {
   const filtered = filter === 'all' ? PRODUCTS : PRODUCTS.filter((p) => p.collection === filter);
   const visible = filtered.slice(0, visibleCount);
   const hasMore = filtered.length > visibleCount;
+  const activeInfo = filter !== 'all' ? COLLECTION_INFO[filter] : null;
 
   return (
     <div>
@@ -35,13 +47,22 @@ export default function Products() {
         </div>
       </div>
 
+      {activeInfo && (
+        <div className="collection-banner">
+          <span className="collection-banner-rule" />
+          <h2>{filter.toUpperCase()}</h2>
+          <p>{lang === 'id' ? activeInfo.idTagline : activeInfo.tagline}</p>
+        </div>
+      )}
+
       <div className="products-body">
         <div className="product-grid">
           {visible.map((p) => (
             <Link key={p.id} to={`/products/${p.id}`} className="product-card">
               <img src={p.image} className="swatch" loading="lazy"/>
-              <h4>{p.name}</h4>
-              <span>{lang === 'id' ? p.idCut : p.cut}</span>
+              <h4>{displayName(p.name, p.collectionLabel)}</h4>
+              <span className="product-collection-label">{t.productDetail.collection}: {p.collectionLabel.toUpperCase()}</span>
+              <span className="product-short-desc">{shortDesc(lang === 'id' ? p.idLongDesc : p.longDesc)}</span>
             </Link>
           ))}
         </div>
